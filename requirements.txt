@@ -1,0 +1,17 @@
+numpy
+pandas
+matplotlib
+scipy
+sympy
+scikit-learn
+jupyterlab
+torch
+torchvision
+transformers
+datasets
+accelerate
+peft
+gymnasium
+fastapi
+uvicorn
+pytest
