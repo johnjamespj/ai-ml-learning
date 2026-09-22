@@ -1,17 +1,5 @@
-numpy
-pandas
-matplotlib
-scipy
-sympy
-scikit-learn
-jupyterlab
-torch
-torchvision
-transformers
-datasets
-accelerate
-peft
-gymnasium
-fastapi
-uvicorn
-pytest
+-r requirements/core.txt
+-r requirements/notebooks.txt
+# Linux complete CPU course: python -m pip install -r requirements/cpu.txt
+# macOS/CUDA: install the appropriate PyTorch/torchvision wheels separately.
+# Network-dependent extensions: requirements/optional.in (not part of the CPU lock).

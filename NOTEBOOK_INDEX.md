@@ -1,3 +1,7 @@
+# Start here
+
+[Core/Advanced/Radar tracks](COURSE_TRACKS.md) | [Student workspace](student/README.md) | [Flagship capstone](capstones/rf_detection/capstone.ipynb) | [Math problem sets](math/problem_sets/README.md)
+
 # Notebook Index
 
 ## Mathematical framework

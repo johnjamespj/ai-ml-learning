@@ -17,3 +17,7 @@ Sweep alpha, gamma and epsilon-decay behavior. Plot Q-values by state.
 
 ## Explain
 Point to the exact line where immediate reward and estimated future reward are combined.
+
+## Time-limit semantics
+
+The 20-step limit truncates an episode but is not a terminal MDP state. The update zeros its bootstrap only on the goal state. A finite-horizon formulation would instead include remaining time in the state. Ties among greedy actions are randomized.

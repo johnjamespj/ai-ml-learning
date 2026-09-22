@@ -18,7 +18,7 @@ def kmeans(X,k,steps=100,seed=0):
         if np.allclose(new,centroids):
             centroids=new; break
         centroids=new
-    return labels,centroids
+    return assign_clusters(X,centroids),centroids
 
 def pca_fit_transform(X,n_components):
     mean=X.mean(axis=0)

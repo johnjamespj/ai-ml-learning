@@ -1,3 +1,5 @@
+> The current guided route is [COURSE_TRACKS.md](COURSE_TRACKS.md). This index retains the full topic order.
+
 # Master Curriculum Index
 
 This is the canonical order for the course.
