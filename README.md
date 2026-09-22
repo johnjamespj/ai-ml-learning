@@ -1,80 +1,53 @@
 # AI/ML Learning Lab
 
-A hands-on path from Python scientific computing to modern AI systems.
+A notebook-first, hands-on path from Python scientific computing to modern AI systems.
 
-This repository contains **78 ordered lessons (00-77)** plus runnable labs, automated tests, reference solutions, notebooks, capstone projects, and a landmark-paper reproduction track.
+The course contains **78 Jupyter lessons**, runnable activities, automated labs/tests, capstone projects, and landmark-paper reproductions.
 
 ## Start here
 
-1. Read [STUDY_PLAN.md](STUDY_PLAN.md).
-2. Use [CURRICULUM.md](CURRICULUM.md) as the canonical lesson index.
-3. Use [PYTHON_TOOLBOX.md](PYTHON_TOOLBOX.md) to map concepts to Python libraries.
-4. Begin [Lesson 00](lessons/00_setup/lesson.md).
-5. Track implementation work in [LAB_PROGRESS.md](LAB_PROGRESS.md).
+1. Install the environment from `requirements.txt`.
+2. Launch Jupyter:
+   ```bash
+   jupyter lab
+   ```
+3. Open [NOTEBOOK_INDEX.md](NOTEBOOK_INDEX.md).
+4. Start with [Lesson 00](lessons/00_setup/lesson.ipynb).
+5. Use [STUDY_PLAN.md](STUDY_PLAN.md) for the full progression.
 
-## Learn by building
+## Every lesson is executable
 
-The course has four intertwined layers:
+Each `lessons/<topic>/lesson.ipynb` contains:
+- the lesson explanation and math;
+- executable versions of the original code examples;
+- a runnable activity/experiment;
+- an explanation checkpoint;
+- environment-safe fallbacks where practical.
 
-### 1. Lessons
-Concept, intuition, math, failure modes, and library usage.
+The intended rhythm is:
 
-### 2. Runnable labs
-Open [labs/README.md](labs/README.md).
+**read → run → change → measure → explain**
 
-Labs contain:
-- `starter.py`
-- `solution.py`
-- `test_lab.py`
-- experiments
-- explanation prompts
+## Labs
+
+The `labs/` directory adds starter-code exercises, reference solutions, and pytest checks.
 
 Example:
 ```bash
-LAB_TARGET=starter pytest labs/lab01_linear_regression/test_lab.py -q
+LAB_TARGET=starter pytest labs/lab04_numpy_mlp/test_lab.py -q
 ```
 
-### 3. Notebooks
-Open [notebooks/README.md](notebooks/README.md).
+## Landmark papers
 
-Notebooks are for visualization and experimentation. Reusable logic belongs in Python modules.
+The `papers/` track asks you to reproduce central mechanisms and results at honest educational scale, perform ablations, and defend what the paper actually contributed.
 
-### 4. Landmark papers
-Open [papers/README.md](papers/README.md) and [papers/PAPER_TRACK.md](papers/PAPER_TRACK.md).
+Start at:
+- [Paper track](papers/PAPER_TRACK.md)
+- [Reproduction template](papers/REPRODUCTION_TEMPLATE.md)
+- [Paper club workflow](papers/PAPER_CLUB.md)
 
-Each paper activity asks you to:
-- understand the pre-paper problem;
-- state the central claim;
-- reconstruct the key mechanism;
-- reproduce one trend at honest educational scale;
-- perform an ablation;
-- explain the evidence;
-- defend the paper without notes.
+## Course philosophy
 
-This means you do not merely read *Attention Is All You Need*. You implement attention, test masks and shapes, alter the scaling term, train a toy Transformer, and explain what actually changed.
+Every sophisticated model should answer to a simpler baseline. Every metric should match the task. Every experiment should preserve provenance. Every notebook should end with an explanation you can defend without the notebook open.
 
-## Major tracks
-
-| Track | Topics | Main tools |
-|---|---|---|
-| Foundations | Python, data, linear algebra, calculus, probability | NumPy, pandas, SciPy |
-| Classical ML | regression, classification, trees, boosting, SVM, clustering, PCA | scikit-learn |
-| Neural nets | forward pass, backprop, losses, optimizers | NumPy |
-| Deep learning | autograd, training loops, CNNs | PyTorch |
-| Sequences | RNN, LSTM, GRU | PyTorch |
-| Transformers | attention, multi-head attention, tokenization | PyTorch |
-| LLM engineering | Hugging Face, LoRA, embeddings, RAG | Transformers, PEFT |
-| Generative AI | autoencoders, VAEs, GANs, diffusion | PyTorch |
-| Reinforcement learning | Q-learning, DQN, actor-critic concepts | Gymnasium, PyTorch |
-| Signals/Radar | features, spectrograms, detection, domain shift | SciPy, scikit-learn, PyTorch |
-| Production | tracking, APIs, Docker, monitoring, GPU/distributed training | FastAPI, Docker, PyTorch |
-| Advanced ML | Bayesian ML, uncertainty, causality, GNNs, multimodal, interpretability | mixed |
-| Systems | agents, robustness, data-centric AI, ML system design | full stack |
-
-## Capstone philosophy
-
-Every sophisticated model should answer to a simpler baseline. Every metric should match the actual task. Every experiment should preserve provenance. Every deployment should include a plan for detecting when reality changes underneath the model.
-
-## Learning rule
-
-If you cannot explain the inputs, outputs, parameters, objective/loss, evaluation metric, assumptions, and failure modes, the model is still a black box. Open the box.
+If you cannot explain the inputs, outputs, parameters, objective, evaluation metric, assumptions, and failure modes, the model is still a black box. Open the box.
