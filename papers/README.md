@@ -1,18 +1,35 @@
 # Landmark Paper Reproduction Track
 
-This track runs beside the normal curriculum.
+This directory is the research-history companion to the 78-lesson AI/ML course.
 
-The purpose is not to claim that a laptop reproduced a paper's full benchmark. The purpose is to reconstruct the **central mechanism and evidence** honestly at educational scale.
+## Start here
+- [Notebook track](NOTEBOOK_TRACK.md)
+- [Paper table](PAPER_TRACK.md)
+- [Paper club workflow](PAPER_CLUB.md)
+- [Reproduction report template](REPRODUCTION_TEMPLATE.md)
 
-## The reproduction loop
-For every paper:
-1. Reconstruct the problem that existed before the paper.
-2. State the paper's central claim in one sentence.
-3. Re-derive the key equation or architecture.
-4. Build the smallest faithful implementation.
-5. Reproduce one important trend, figure, behavior, or ablation.
-6. Change one assumption and observe what breaks.
-7. Compare the idea with a modern implementation.
-8. Give a five-minute oral/written defense without notes.
+## Notebook structure
 
-Use [PAPER_TRACK.md](PAPER_TRACK.md) for the sequence and [REPRODUCTION_TEMPLATE.md](REPRODUCTION_TEMPLATE.md) for every report.
+Every paper notebook asks you to move through:
+
+**before-reading questions → paper claim → implementation → reproduction → figure/table → ablation → scale gap → defense**
+
+The notebooks are intentionally small enough to run on normal development hardware. They reproduce **ideas and evidence patterns**, not giant original training runs.
+
+## What "reproduce" means here
+
+A valid educational reproduction might show:
+- perceptron convergence on separable data;
+- residual connections improving optimization at depth;
+- positional information being necessary for order-sensitive Transformer tasks;
+- retrieval improving access to external facts;
+- LoRA succeeding when the required task update is low-rank.
+
+It does **not** mean claiming the original ImageNet, Atari, web-scale language, or billion-parameter benchmark was recreated.
+
+Run:
+```bash
+python tools/validate_paper_notebooks.py
+```
+
+to structurally validate the full paper-notebook track.

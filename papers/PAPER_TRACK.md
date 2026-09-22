@@ -1,40 +1,29 @@
 # Landmark Paper Track
 
-Read these alongside the matching course lessons.
+| # | Paper | Year | Notebook | Educational reproduction target |
+|---|---|---:|---|---|
+| 01 | Perceptron | 1958 | [Open](notebooks/01_perceptron.ipynb) | Perceptron learning on separable data vs XOR |
+| 02 | Backpropagation | 1986 | [Open](notebooks/02_backpropagation_1986.ipynb) | Backpropagation and gradient checking on XOR |
+| 03 | LeNet | 1998 | [Open](notebooks/03_lenet.ipynb) | LeNet-style convolution on small handwritten digits |
+| 04 | AlexNet | 2012 | [Open](notebooks/04_alexnet.ipynb) | ReLU / dropout / augmentation design-claim ablations |
+| 05 | word2vec | 2013 | [Open](notebooks/05_word2vec.ipynb) | Skip-gram embeddings on a tiny corpus |
+| 06 | Variational Autoencoder | 2013 | [Open](notebooks/06_vae.ipynb) | VAE reparameterization, KL term, and latent space |
+| 07 | GAN | 2014 | [Open](notebooks/07_gan.ipynb) | GAN mode coverage on a 2-D mixture |
+| 08 | DQN | 2015 | [Open](notebooks/08_dqn.ipynb) | DQN replay + target network on a small control problem |
+| 09 | ResNet | 2015 | [Open](notebooks/09_resnet.ipynb) | Plain vs residual optimization with depth |
+| 10 | Transformer | 2017 | [Open](notebooks/10_transformer.ipynb) | Scaled attention + positional information on an order-sensitive task |
+| 11 | BERT | 2018 | [Open](notebooks/11_bert.ipynb) | Bidirectional context on a toy masked-token task |
+| 12 | GPT-3 few-shot protocol | 2020 | [Open](notebooks/12_gpt3_few_shot.ipynb) | Zero/one/few-shot in-context evaluation protocol on a task family |
+| 13 | SimCLR | 2020 | [Open](notebooks/13_simclr.ipynb) | Contrastive representation learning on digits |
+| 14 | RAG | 2020 | [Open](notebooks/14_rag.ipynb) | Retriever + external context with Recall@k/MRR |
+| 15 | DDPM | 2020 | [Open](notebooks/15_ddpm.ipynb) | Forward diffusion + learned noise prediction on 2-D data |
+| 16 | CLIP | 2021 | [Open](notebooks/16_clip.ipynb) | Paired-modality contrastive alignment and retrieval |
+| 17 | LoRA | 2021 | [Open](notebooks/17_lora.ipynb) | Low-rank adaptation rank/parameter tradeoff |
+| 18 | U-Net | 2015 | [Open](notebooks/18_unet.ipynb) | Encoder-decoder segmentation with skip connections |
+| 19 | Batch Normalization | 2015 | [Open](notebooks/19_batchnorm.ipynb) | Deep-network training with vs without BatchNorm |
+| 20 | Dropout | 2014 | [Open](notebooks/20_dropout.ipynb) | Small-data generalization with vs without Dropout |
+| 21 | Adam | 2014 | [Open](notebooks/21_adam.ipynb) | SGD / momentum / Adam trajectories on an ill-conditioned objective |
 
-| # | Paper | Year | Reproduction target |
-|---|---|---:|---|
-| 01 | Rosenblatt, *The Perceptron* | 1958 | perceptron learning on separable vs XOR data |
-| 02 | Rumelhart, Hinton & Williams, *Learning representations by back-propagating errors* | 1986 | backprop on a tiny hidden-layer network |
-| 03 | LeCun et al., *Gradient-Based Learning Applied to Document Recognition* | 1998 | LeNet-style CNN on MNIST/FashionMNIST |
-| 04 | Krizhevsky, Sutskever & Hinton, *ImageNet Classification with Deep CNNs* | 2012 | AlexNet ideas: ReLU, augmentation, dropout |
-| 05 | Mikolov et al., *Efficient Estimation of Word Representations in Vector Space* | 2013 | skip-gram/CBOW embeddings on a tiny corpus |
-| 06 | Kingma & Welling, *Auto-Encoding Variational Bayes* | 2013 | VAE reparameterization + latent interpolation |
-| 07 | Goodfellow et al., *Generative Adversarial Networks* | 2014 | GAN on a 2-D distribution |
-| 08 | Mnih et al., *Human-level control through deep reinforcement learning* | 2015 | DQN ingredients on a small Gymnasium task |
-| 09 | He et al., *Deep Residual Learning for Image Recognition* | 2015 | plain vs residual network at increasing depth |
-| 10 | Vaswani et al., *Attention Is All You Need* | 2017 | scaled dot-product + multi-head attention |
-| 11 | Devlin et al., *BERT* | 2018 | masked-language-model adaptation at small scale |
-| 12 | Brown et al., *Language Models are Few-Shot Learners* | 2020 | in-context prompting behavior, not full pretraining |
-| 13 | Chen et al., *A Simple Framework for Contrastive Learning of Visual Representations* | 2020 | SimCLR-style contrastive embeddings |
-| 14 | Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* | 2020 | retriever + generator with retrieval metrics |
-| 15 | Ho, Jain & Abbeel, *Denoising Diffusion Probabilistic Models* | 2020 | toy forward-noise/reverse-denoise process |
-| 16 | Radford et al., *Learning Transferable Visual Models From Natural Language Supervision* | 2021 | CLIP-style aligned toy embeddings |
-| 17 | Hu et al., *LoRA: Low-Rank Adaptation of Large Language Models* | 2021 | full vs low-rank trainable update |
-| 18 | Ronneberger et al., *U-Net* | 2015 | skip-connected encoder-decoder segmentation |
-| 19 | Ioffe & Szegedy, *Batch Normalization* | 2015 | training with/without batch normalization |
-| 20 | Srivastava et al., *Dropout* | 2014 | generalization with/without dropout |
-| 21 | Kingma & Ba, *Adam* | 2014 | optimizer trajectories on same objective |
+## Standard
 
-## Stable links for several core papers
-- VAE: https://arxiv.org/abs/1312.6114
-- GAN: https://arxiv.org/abs/1406.2661
-- ResNet: https://arxiv.org/abs/1512.03385
-- Transformer: https://arxiv.org/abs/1706.03762
-- BERT: https://arxiv.org/abs/1810.04805
-- RAG: https://arxiv.org/abs/2005.11401
-- DDPM: https://arxiv.org/abs/2006.11239
-- LoRA: https://arxiv.org/abs/2106.09685
-
-## Rule
-For giant-scale papers, reproduce the **mechanism and claimed trend**, not the original compute budget. State the scale gap explicitly.
+For giant-scale papers, reproduce the **mechanism, protocol, or claimed trend** at an honest educational scale. Never describe a toy experiment as reproducing the original benchmark result.
