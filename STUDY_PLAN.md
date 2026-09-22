@@ -1,42 +1,54 @@
 # Study Plan
 
-This is now a **notebook-first course**.
+This is a **notebook-first and math-first** course.
 
 ## Normal lesson cycle
 
-For each entry in [NOTEBOOK_INDEX.md](NOTEBOOK_INDEX.md):
+For each lesson:
 
-1. Open `lesson.ipynb`.
-2. Run cells in order.
-3. Predict shapes/results before executing important cells.
-4. Modify the runnable activity near the end.
-5. Compare the new result with the original.
-6. Add a Markdown explanation cell in your own words.
-7. Complete the matching `labs/` exercise when one exists.
-8. Complete the assigned landmark-paper reproduction when scheduled.
-9. Commit your notebook with your results.
+1. Open its **Mathematical Framework** section.
+2. Work through the linked math notebook(s).
+3. Re-derive the main equation/update in your own Markdown cell or on paper.
+4. Predict important shapes, signs, limits, or qualitative behavior.
+5. Run the lesson cells.
+6. Modify the runnable activity.
+7. Compare the new result with the original.
+8. Explain the result using the math, not only the API behavior.
+9. Complete the matching lab.
+10. Complete the assigned landmark-paper reproduction when scheduled.
+
+## Math gates
+
+Before moving past a stage, be able to derive/explain:
+
+- **Foundations:** dot products, projections, gradients, Bayes, likelihood, entropy.
+- **Classical ML:** least squares, logistic likelihood, regularization, margin, PCA eigenproblem.
+- **Neural nets:** chain rule, matrix-gradient shapes, cross-entropy gradient, initialization/gradient flow.
+- **Transformers:** Q/K/V projections, scaled dot-product attention, masking, positional symmetry breaking.
+- **Generative AI:** ELBO/KL, adversarial objective, forward diffusion marginal.
+- **RL:** return, Bellman equations, TD error, Q-learning update.
+- **Radar/signal ML:** likelihood-ratio tests, matched filtering, ROC/Pd/Pfa, covariance/whitening.
+- **Uncertainty:** posterior predictive reasoning and calibration.
+
+Finish [Math 16 · Synthesis and Derivation Workshop](math/16_math_synthesis.ipynb) before the final capstone.
 
 ## Stage gates
 
-- **Lessons 00-07:** foundations → Phase 1 checkpoint
-- **Lessons 08-18:** classical ML → classical benchmark
-- **Lessons 19-24:** neural nets → NumPy MLP project + backprop paper
-- **Lessons 25-34:** PyTorch/CNN/signal ML → PyTorch classifier + spectrogram CNN
-- **Lessons 35-45:** sequence/Transformer/LLM → mini Transformer + RAG
-- **Lessons 46-51:** generative AI/RL → generative + RL projects
-- **Lessons 52-77:** signal/radar, deployment, advanced ML → deployed model + final capstone
-
-## Paper cycle
-
-Use [papers/PAPER_TRACK.md](papers/PAPER_TRACK.md). Reproduce the mechanism and a meaningful trend, not an imaginary copy of the original compute budget.
+- Lessons 00-07 → Phase 1 checkpoint
+- Lessons 08-18 → classical benchmark
+- Lessons 19-24 → NumPy MLP + backprop paper
+- Lessons 25-34 → PyTorch classifier + spectrogram CNN
+- Lessons 35-45 → mini Transformer + RAG
+- Lessons 46-51 → generative + RL projects
+- Lessons 52-77 → radar/signal specialization, deployment, advanced ML, final capstone
 
 ## Mastery
 
-A lesson is complete when you can:
-- run it;
-- alter it;
-- explain the mechanism;
-- identify a failure mode;
-- choose an appropriate metric;
-- compare against a simpler baseline;
-- connect it to a landmark result where applicable.
+A topic is complete only when you can:
+- derive or justify its core equation;
+- implement a simplified version;
+- use the standard Python tool;
+- choose a valid evaluation method;
+- identify assumptions and failure modes;
+- compare it with a simpler baseline;
+- connect it to the relevant landmark paper.

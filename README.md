@@ -1,53 +1,46 @@
 # AI/ML Learning Lab
 
-A notebook-first, hands-on path from Python scientific computing to modern AI systems.
+A notebook-first, math-first, hands-on path from Python scientific computing to modern AI systems.
 
-The course contains **78 Jupyter lessons**, runnable activities, automated labs/tests, capstone projects, and landmark-paper reproductions.
+The course contains **78 Jupyter lessons**, **17 mathematical-framework notebooks**, runnable labs/tests, capstone projects, and **21 landmark-paper reproduction notebooks**.
 
 ## Start here
 
 1. Install the environment from `requirements.txt`.
-2. Launch Jupyter:
-   ```bash
-   jupyter lab
-   ```
-3. Open [NOTEBOOK_INDEX.md](NOTEBOOK_INDEX.md).
-4. Start with [Lesson 00](lessons/00_setup/lesson.ipynb).
-5. Use [STUDY_PLAN.md](STUDY_PLAN.md) for the full progression.
+2. Launch Jupyter with `jupyter lab`.
+3. Read [MATH_FRAMEWORK.md](MATH_FRAMEWORK.md).
+4. Open [NOTEBOOK_INDEX.md](NOTEBOOK_INDEX.md).
+5. Start with [Lesson 00](lessons/00_setup/lesson.ipynb) and its linked math companions.
+6. Use [STUDY_PLAN.md](STUDY_PLAN.md) for the full progression.
 
-## Every lesson is executable
+## The course has four intertwined layers
 
-Each `lessons/<topic>/lesson.ipynb` contains:
-- the lesson explanation and math;
-- executable versions of the original code examples;
-- a runnable activity/experiment;
-- an explanation checkpoint;
-- environment-safe fallbacks where practical.
+### Mathematical framework
+[Math notebooks](math/README.md) derive the linear algebra, calculus, probability, statistics, information theory, optimization, neural-network, Transformer, generative, RL, and signal-detection mathematics behind the code.
 
-The intended rhythm is:
+### Executable lessons
+Every lesson contains a visible **Mathematical Framework** section linking to the relevant derivations, followed by executable examples and activities.
 
-**read → run → change → measure → explain**
+### Implementation labs
+The `labs/` directory makes you implement core mechanisms and pass tests.
 
-## Labs
+### Landmark papers
+The `papers/` notebooks reproduce central mechanisms/trends at honest educational scale. Every paper notebook also links directly to its mathematical prerequisites.
 
-The `labs/` directory adds starter-code exercises, reference solutions, and pytest checks.
+## Required learning rhythm
 
-Example:
-```bash
-LAB_TARGET=starter pytest labs/lab04_numpy_mlp/test_lab.py -q
-```
+**derive → predict → run → change → measure → explain → reproduce**
 
-## Landmark papers
+For every method, answer:
 
-The `papers/` track asks you to reproduce central mechanisms and results at honest educational scale, perform ablations, and defend what the paper actually contributed.
-
-Start at:
-- [Paper track](papers/PAPER_TRACK.md)
-- [Reproduction template](papers/REPRODUCTION_TEMPLATE.md)
-- [Paper club workflow](papers/PAPER_CLUB.md)
+1. What mathematical objects are involved?
+2. What objective/probability model defines the problem?
+3. Why does the update or algorithm follow from that math?
+4. Which assumptions are required?
+5. What fails when those assumptions break?
 
 ## Course philosophy
 
-Every sophisticated model should answer to a simpler baseline. Every metric should match the task. Every experiment should preserve provenance. Every notebook should end with an explanation you can defend without the notebook open.
+Every sophisticated model should answer to a simpler baseline. Every metric should match the task. Every experiment should preserve provenance. Every result should be defensible mathematically and empirically.
 
-If you cannot explain the inputs, outputs, parameters, objective, evaluation metric, assumptions, and failure modes, the model is still a black box. Open the box.
+If you can call the library but cannot derive or explain the mechanism, the method is still a black box.

@@ -2,15 +2,7 @@
 
 This directory is the mathematical spine of the AI/ML course.
 
-The normal lesson notebooks teach algorithms and tools. These notebooks focus on:
-
-1. **objects**: vectors, matrices, random variables, functions, distributions;
-2. **objectives**: what quantity an algorithm optimizes;
-3. **derivations**: how the update/equation follows mathematically;
-4. **assumptions**: what must be true for the derivation to describe reality;
-5. **failure modes**: what happens when those assumptions break.
-
-## Recommended order
+## Required notebooks
 
 - [00 · Notation and shapes](00_notation_shapes.ipynb)
 - [01 · Linear algebra and geometry](01_linear_algebra_geometry.ipynb)
@@ -28,3 +20,18 @@ The normal lesson notebooks teach algorithms and tools. These notebooks focus on
 - [13 · Reinforcement-learning mathematics](13_reinforcement_learning_math.ipynb)
 - [14 · Signal/radar detection mathematics](14_signal_detection_math.ipynb)
 - [15 · Bayesian uncertainty and calibration](15_bayesian_uncertainty_calibration.ipynb)
+- [16 · Synthesis and derivation workshop](16_math_synthesis.ipynb)
+
+Also use:
+- [Math-to-lesson map](MATH_MAP.md)
+- [Formula reference](FORMULA_REFERENCE.md)
+
+## The five-question framework
+
+For every algorithm, answer:
+
+1. **Objects:** what vectors, matrices, random variables, or functions are involved?
+2. **Objective:** what quantity is minimized, maximized, estimated, or approximated?
+3. **Derivation:** why does the update/rule follow mathematically?
+4. **Assumptions:** what conditions make the derivation valid?
+5. **Failure:** how does the method behave when those assumptions fail?
