@@ -1,0 +1,68 @@
+name: Course baseline audit
+on:
+  push:
+    branches: ['course-hardening/2026-09-22']
+    paths: ['.github/workflows/course-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Archive source for independent execution
+        run: |
+          mkdir -p /tmp/course-source
+          git archive --format=zip --output=/tmp/course-source/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: course-source
+          path: /tmp/course-source/source.zip
+          retention-days: 7
+      - name: Install bounded CPU audit environment
+        run: |
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install numpy==2.3.5 nbformat==5.10.4 nbclient==0.10.4 ipykernel==7.2.0
+      - name: Execute known-risk notebook from a fresh kernel
+        run: |
+          mkdir -p artifacts/baseline
+          python - <<'PY'
+          import json, pathlib, nbformat, traceback
+          from nbclient import NotebookClient
+          p = pathlib.Path('lessons/26_pytorch_modules_training_loop/lesson.ipynb')
+          nb = nbformat.read(p, as_version=4)
+          result = {'notebook': str(p), 'status': 'not_run'}
+          try:
+              NotebookClient(nb, timeout=120, kernel_name='python3', allow_errors=False).execute()
+              result['status'] = 'passed'
+          except Exception as exc:
+              result.update(status='failed', error=type(exc).__name__, detail=str(exc))
+          nbformat.write(nb, 'artifacts/baseline/lesson26.executed.ipynb')
+          pathlib.Path('artifacts/baseline/report.json').write_text(json.dumps(result, indent=2))
+          print(json.dumps(result, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baseline-execution
+          path: artifacts/baseline
+          retention-days: 7
+      - name: Fail if baseline execution failed
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('artifacts/baseline/report.json'))
+          raise SystemExit(0 if r['status']=='passed' else 1)
+          PY
