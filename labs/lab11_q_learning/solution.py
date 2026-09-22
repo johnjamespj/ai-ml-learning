@@ -19,9 +19,10 @@ def train_q(episodes=1000,alpha=.2,gamma=.95,epsilon=.2,seed=0):
     for _ in range(episodes):
         s=env.reset()
         while True:
-            a=int(rng.integers(2)) if rng.random()<epsilon else int(np.argmax(Q[s]))
+            a=int(rng.integers(2)) if rng.random()<epsilon else int(rng.choice(np.flatnonzero(Q[s] == Q[s].max())))
             ns,r,done=env.step(a)
-            target=r if done else r+gamma*np.max(Q[ns])
+            terminated = ns == env.n_states-1
+            target=r if terminated else r+gamma*np.max(Q[ns])
             Q[s,a]+=alpha*(target-Q[s,a])
             s=ns
             if done: break

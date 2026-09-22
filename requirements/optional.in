@@ -1,0 +1,7 @@
+# Optional, intentionally separate from the validated CPU environment.
+# Resolve and freeze a separate environment before reporting experiments with these.
+transformers
+datasets
+accelerate
+peft
+gymnasium

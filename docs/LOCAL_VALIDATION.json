@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-22",
+  "base_main_commit": "f005e358950bee1ee868664babf30f7c907257d7",
+  "scope": "Local Python 3.13.5 CPU validation; independent GitHub Python 3.12 and Docker validation reported separately",
+  "baseline": {
+    "total": 118,
+    "counts": {
+      "failed": 18,
+      "not_run_safety": 2,
+      "passed": 98
+    },
+    "failures": [
+      {
+        "path": "lessons/00_setup/lesson.ipynb",
+        "error": null,
+        "reason": "Baseline launches server/install or downloads weights"
+      },
+      {
+        "path": "lessons/11_trees_random_forests/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/12_boosting/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/13_svm_kernels/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/15_evaluation_cross_validation/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/18_anomaly_detection/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/21_backpropagation/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/22_numpy_neural_network/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/26_pytorch_modules_training_loop/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/27_datasets_dataloaders/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/28_gpu_training_reproducibility/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/29_training_validation_checkpointing/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/30_debugging_pytorch/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/42_huggingface_transformers/lesson.ipynb",
+        "error": null,
+        "reason": "Baseline launches server/install or downloads weights"
+      },
+      {
+        "path": "lessons/52_time_series_foundations/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/54_signal_feature_engineering/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/61_gpu_performance/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "lessons/64_uncertainty_calibration/lesson.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "notebooks/01_linear_regression_lab.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      },
+      {
+        "path": "notebooks/02_attention_paper_lab.ipynb",
+        "error": "CellExecutionError",
+        "reason": null
+      }
+    ]
+  },
+  "final": {
+    "total": 119,
+    "counts": {
+      "cpu_passed_optional_not_run": 7,
+      "passed": 112
+    },
+    "source_changed_during_run": false,
+    "environment": {
+      "python": "3.13.5",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scikit-learn": "1.8.0",
+        "torch": "2.10.0+cpu",
+        "nbclient": "0.10.4",
+        "nbformat": "5.10.4",
+        "ipykernel": "7.2.0",
+        "fastapi": "0.128.2"
+      }
+    },
+    "report_sha256": "775fcee637513385475329a5c4b3dd93c01912d5f8e4ee810b35deca91006591",
+    "optional_not_run": [
+      {
+        "path": "capstones/rf_detection/capstone.ipynb",
+        "paths": [
+          "Actual Docker build and HTTP/container parity are tested separately by CI"
+        ]
+      },
+      {
+        "path": "lessons/28_gpu_training_reproducibility/lesson.ipynb",
+        "paths": [
+          "CUDA acceleration and mixed-precision hardware performance"
+        ]
+      },
+      {
+        "path": "lessons/42_huggingface_transformers/lesson.ipynb",
+        "paths": [
+          "Pretrained Hugging Face model download",
+          "Optional Transformers random-architecture inspection"
+        ]
+      },
+      {
+        "path": "lessons/59_docker_ml/lesson.ipynb",
+        "paths": [
+          "Actual Docker image build and container execution"
+        ]
+      },
+      {
+        "path": "lessons/61_gpu_performance/lesson.ipynb",
+        "paths": [
+          "CUDA acceleration and mixed-precision hardware performance"
+        ]
+      },
+      {
+        "path": "lessons/62_distributed_training/lesson.ipynb",
+        "paths": [
+          "Actual multi-process or multi-GPU distributed training"
+        ]
+      },
+      {
+        "path": "papers/notebooks/11_bert.ipynb",
+        "paths": [
+          "Optional Hugging Face architecture inspection"
+        ]
+      }
+    ]
+  },
+  "unit_tests": {
+    "passed": 60,
+    "failed": 0,
+    "scope": "reference implementations, artifact handling, submission contracts, mathematical checks, API parity"
+  },
+  "capstone": {
+    "models": [
+      "energy",
+      "feature_logistic",
+      "matched_filter_bank",
+      "spectrogram_cnn",
+      "temporal_transformer"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "conditions": [
+      "clipped",
+      "colored_noise",
+      "heldout_frequency",
+      "in_distribution"
+    ],
+    "snr_db": [
+      -20,
+      -15,
+      -10,
+      -5,
+      0,
+      5
+    ],
+    "measured_rows": 360,
+    "metrics_sha256": "3b68a0d434140c53e3e320c7187c006f24959f242e6866d2d1ec918b7cc6f60b",
+    "latency": {
+      "scope": "local NumPy inference, batch=1, not HTTP or network latency",
+      "p50_ms": 0.188446,
+      "p95_ms": 0.4163540000000001,
+      "samples": 300,
+      "warmups": 20
+    }
+  },
+  "human_mastery": "not_assessed",
+  "research_benchmark_reproduction": "not_established",
+  "real_receiver_qualification": "not_tested"
+}

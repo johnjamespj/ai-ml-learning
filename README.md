@@ -1,46 +1,44 @@
 # AI/ML Learning Lab
 
-A notebook-first, math-first, hands-on path from Python scientific computing to modern AI systems.
+A notebook-first course combining derivations, runnable experiments, implementation labs, landmark papers and an end-to-end engineering capstone.
 
-The course contains **78 Jupyter lessons**, **17 mathematical-framework notebooks**, runnable labs/tests, capstone projects, and **21 landmark-paper reproduction notebooks**.
+## Start with a path, not an encyclopedia
 
-## Start here
+Follow the **[42-lesson Core Track](COURSE_TRACKS.md)**, then take the seven-lesson signal/radar specialization or select from 29 advanced electives. The full collection retains 78 lessons, 17 math companions and 21 paper notebooks.
 
-1. Install the environment from `requirements.txt`.
-2. Launch Jupyter with `jupyter lab`.
-3. Read [MATH_FRAMEWORK.md](MATH_FRAMEWORK.md).
-4. Open [NOTEBOOK_INDEX.md](NOTEBOOK_INDEX.md).
-5. Start with [Lesson 00](lessons/00_setup/lesson.ipynb) and its linked math companions.
-6. Use [STUDY_PLAN.md](STUDY_PLAN.md) for the full progression.
+```bash
+git clone https://github.com/johnjamespj/ai-ml-learning.git
+cd ai-ml-learning
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements/cpu.txt
+python -m ipykernel install --user --name ai-ml-course
+jupyter lab
+```
 
-## The course has four intertwined layers
+These are Linux CPU instructions. For macOS or CUDA use the matching official PyTorch wheels rather than the Linux CPU requirements file. Select the `ai-ml-course` kernel in Jupyter.
 
-### Mathematical framework
-[Math notebooks](math/README.md) derive the linear algebra, calculus, probability, statistics, information theory, optimization, neural-network, Transformer, generative, RL, and signal-detection mathematics behind the code.
+## Learn, implement, then assess
 
-### Executable lessons
-Every lesson contains a visible **Mathematical Framework** section linking to the relevant derivations, followed by executable examples and activities.
+Begin at [Lesson 00](lessons/00_setup/lesson.ipynb), use the linked [mathematical framework](math/README.md), and work through the [study plan](STUDY_PLAN.md). Make an independent workspace with `python tools/make_student_workspace.py --output work`.
 
-### Implementation labs
-The `labs/` directory makes you implement core mechanisms and pass tests.
+The course includes **12 implementation labs, six cumulative exams, and eight mathematical problem sets**. Starter work is separate from instructor answers. Passing the reference suite checks the course, not your understanding. Exams remain NOT GRADED until you attempt them; [the rubric](assessment/RUBRIC.md) requires derivation, coding, debugging, experimental design and defense.
 
-### Landmark papers
-The `papers/` notebooks reproduce central mechanisms/trends at honest educational scale. Every paper notebook also links directly to its mathematical prerequisites.
+## Research and engineering
 
-## Required learning rhythm
+The [paper track](papers/NOTEBOOK_TRACK.md) now exports source/configuration provenance, figures, diagnostics and clearly marked ablation/interpretation status. Use [paired-seed evidence recording](papers/EXPERIMENTS.md) rather than choosing a lucky curve.
 
-**derive → predict → run → change → measure → explain → reproduce**
+The **[flagship RF detection capstone](capstones/rf_detection/capstone.ipynb)** compares energy and matched-filter baselines, feature ML, a spectrogram CNN and a temporal Transformer. It separates fitting, validation, probability calibration, threshold setting and testing; reports Pd/Pfa against SNR and shifts; exports a safe model artifact; serves it through FastAPI; and includes Docker parity and monitoring checks.
 
-For every method, answer:
+## Trust requires execution evidence
 
-1. What mathematical objects are involved?
-2. What objective/probability model defines the problem?
-3. Why does the update or algorithm follow from that math?
-4. Which assumptions are required?
-5. What fails when those assumptions break?
+```bash
+python tools/validate_course.py
+python -m pytest -q
+python tools/execute_notebooks.py --group smoke
+python tools/execute_notebooks.py --group all --workers 2
+```
 
-## Course philosophy
+GitHub Actions installs a pinned CPU environment, validates structure and links, runs tests, executes every worked notebook in a fresh kernel, and tests the real inference container. Errors fail the workflow and reports are retained. GPU/distributed/download paths are explicitly separate, not quietly counted as tested.
 
-Every sophisticated model should answer to a simpler baseline. Every metric should match the task. Every experiment should preserve provenance. Every result should be defensible mathematically and empirically.
-
-If you can call the library but cannot derive or explain the mechanism, the method is still a black box.
+Read the [quality contract](docs/QUALITY.md) and [implementation references](docs/SOURCES.md). Execution, scientific reproduction, and learner mastery are different standards. Synthetic RF results are not hardware qualification.

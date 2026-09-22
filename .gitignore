@@ -8,3 +8,13 @@ data/raw/
 models/
 checkpoints/
 runs/
+# Local learning and execution output
+artifacts/
+results/
+work/
+*.egg-info/
+.pytest_cache/
+*.pt
+*.pth
+model.json
+.env.*

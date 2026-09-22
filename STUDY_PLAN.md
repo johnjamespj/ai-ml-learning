@@ -1,54 +1,26 @@
-# Study Plan
+# Study plan
 
-This is a **notebook-first and math-first** course.
+## The normal cycle
 
-## Normal lesson cycle
+Read the lesson's mathematical framework, derive its central equation, predict shapes and limiting behavior, run the worked notebook, change one assumption, measure the result, and explain it. Complete the corresponding independent lab before reading its reference implementation.
 
-For each lesson:
+Use [Core/Advanced/Radar tracks](COURSE_TRACKS.md) to avoid treating all 78 topics as simultaneous prerequisites. Revisit math companions when needed rather than rereading the entire math sequence before every lesson.
 
-1. Open its **Mathematical Framework** section.
-2. Work through the linked math notebook(s).
-3. Re-derive the main equation/update in your own Markdown cell or on paper.
-4. Predict important shapes, signs, limits, or qualitative behavior.
-5. Run the lesson cells.
-6. Modify the runnable activity.
-7. Compare the new result with the original.
-8. Explain the result using the math, not only the API behavior.
-9. Complete the matching lab.
-10. Complete the assigned landmark-paper reproduction when scheduled.
+## Six cumulative gates
 
-## Math gates
+1. Foundations: scientific Python, gradients, probability and estimation. Pass Exam 01 and the early math problem sets.
+2. Classical ML: build a leakage-safe benchmark against a dummy baseline. Pass Exam 02.
+3. Neural networks: implement the NumPy MLP, gradient-check it and explain XOR. Pass Exam 03 and the backprop paper defense.
+4. PyTorch and vision: train/evaluate/checkpoint a model and diagnose failures. Pass Exam 04.
+5. Transformers and LLM systems: implement attention and masks, reproduce an order-sensitive experiment and evaluate retrieval separately. Pass Exam 05.
+6. Systems: complete the synthetic RF capstone or an equivalently defended end-to-end system. Pass Exam 06 and the math synthesis workshop.
 
-Before moving past a stage, be able to derive/explain:
+Every exam mixes derivation, implementation, debugging, experimental design and defense. Use the [rubric](assessment/RUBRIC.md); numerical success does not complete a written or oral assessment.
 
-- **Foundations:** dot products, projections, gradients, Bayes, likelihood, entropy.
-- **Classical ML:** least squares, logistic likelihood, regularization, margin, PCA eigenproblem.
-- **Neural nets:** chain rule, matrix-gradient shapes, cross-entropy gradient, initialization/gradient flow.
-- **Transformers:** Q/K/V projections, scaled dot-product attention, masking, positional symmetry breaking.
-- **Generative AI:** ELBO/KL, adversarial objective, forward diffusion marginal.
-- **RL:** return, Bellman equations, TD error, Q-learning update.
-- **Radar/signal ML:** likelihood-ratio tests, matched filtering, ROC/Pd/Pfa, covariance/whitening.
-- **Uncertainty:** posterior predictive reasoning and calibration.
+## Paper work
 
-Finish [Math 16 · Synthesis and Derivation Workshop](math/16_math_synthesis.ipynb) before the final capstone.
+Use the [21 paper notebooks](papers/NOTEBOOK_TRACK.md), state the scale gap, predeclare comparisons, run paired seeds, and retain failures. Automatic evidence exports distinguish measured values from unperformed ablations. A smaller experiment can fail to reproduce a trend; report that result honestly.
 
-## Stage gates
+## Final evidence packet
 
-- Lessons 00-07 → Phase 1 checkpoint
-- Lessons 08-18 → classical benchmark
-- Lessons 19-24 → NumPy MLP + backprop paper
-- Lessons 25-34 → PyTorch classifier + spectrogram CNN
-- Lessons 35-45 → mini Transformer + RAG
-- Lessons 46-51 → generative + RL projects
-- Lessons 52-77 → radar/signal specialization, deployment, advanced ML, final capstone
-
-## Mastery
-
-A topic is complete only when you can:
-- derive or justify its core equation;
-- implement a simplified version;
-- use the standard Python tool;
-- choose a valid evaluation method;
-- identify assumptions and failure modes;
-- compare it with a simpler baseline;
-- connect it to the relevant landmark paper.
+Keep your derivations, six reviewed exam records, starter-test results, paper ablation reports, model/data/configuration provenance, final test report, inference parity check and deployment/monitoring limitations. A polished demo alone is insufficient.
