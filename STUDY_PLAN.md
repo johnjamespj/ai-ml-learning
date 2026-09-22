@@ -1,63 +1,103 @@
 # Study Plan
 
-Do not try to memorize 78 lessons in one marathon. Treat this as an engineering apprenticeship.
+Treat this repository as an engineering apprenticeship, not a reading list.
 
-## Normal session
+## Normal lesson cycle
+
 For each lesson:
-1. Read the concept section.
-2. Predict outputs/shapes before running code.
-3. Type the code rather than copy-pasting blindly.
-4. Break something intentionally.
-5. Complete the exercise.
-6. Explain the concept from memory.
-7. Commit your work.
+1. Read the concept and math.
+2. Predict outputs/shapes before executing examples.
+3. Type and modify the code.
+4. Complete the matching runnable lab when one exists.
+5. Make the lab tests pass against `starter.py`.
+6. Run at least one experiment that changes an assumption.
+7. Explain the result from memory.
+8. Commit your work.
 
-## Recommended pace
-A reasonable pace is 4 to 6 focused sessions per week.
+## Paper cycle
 
-### Stage 1
-Lessons 00-07
+Every few lessons, complete a matching landmark-paper activity.
 
-Gate: complete Phase 1 checkpoint.
+Use:
+- [papers/PAPER_TRACK.md](papers/PAPER_TRACK.md)
+- [papers/REPRODUCTION_TEMPLATE.md](papers/REPRODUCTION_TEMPLATE.md)
+- [papers/PAPER_CLUB.md](papers/PAPER_CLUB.md)
 
-### Stage 2
-Lessons 08-18
+A paper is complete when you can explain the world before it, its actual novelty, the evidence, an ablation, its scale limitations, and what survived into modern practice.
 
-Gate: complete the classical ML benchmark.
+## Stages
 
-### Stage 3
-Lessons 19-24
+### Stage 1: Foundations
+Lessons 00-07.
 
-Gate: build the NumPy neural network without looking at a final solution.
+Labs: 01.
 
-### Stage 4
-Lessons 25-34
+Paper: Perceptron.
 
-Gate: production-style PyTorch classifier + spectrogram CNN.
+Gate: Phase 1 checkpoint.
 
-### Stage 5
-Lessons 35-45
+### Stage 2: Classical ML
+Lessons 08-18.
 
-Gate: mini Transformer + measured RAG project.
+Labs: 02-03.
 
-### Stage 6
-Lessons 46-56
+Gate: Classical ML benchmark.
 
-Gate: generative/RL work plus radar-signal ML project.
+### Stage 3: Neural networks from first principles
+Lessons 19-24.
 
-### Stage 7
-Lessons 57-77
+Lab: 04.
 
-Gate: deploy a model and complete the final capstone.
+Paper: Backpropagation.
+
+Gate: NumPy neural network project.
+
+### Stage 4: PyTorch and computer vision
+Lessons 25-34.
+
+Labs: 05, 06, 09, 10.
+
+Papers: LeNet, AlexNet, ResNet.
+
+Gate: PyTorch classifier + spectrogram CNN.
+
+### Stage 5: Sequences, Transformers and LLMs
+Lessons 35-45.
+
+Labs: 07, 12.
+
+Papers: word2vec, Transformer, BERT, RAG, LoRA.
+
+Gate: Mini Transformer + measured RAG project.
+
+### Stage 6: Generative AI and RL
+Lessons 46-51.
+
+Labs: 08, 11.
+
+Papers: VAE, GAN, DDPM, DQN.
+
+Gate: generative-model and RL projects.
+
+### Stage 7: Signals, deployment and advanced ML
+Lessons 52-77.
+
+Lab: 10 plus the deployment/capstone projects.
+
+Paper extensions: contrastive learning / CLIP-style multimodal representation learning.
+
+Gate: deployed model + final capstone.
 
 ## Mastery rule
+
 You know a topic when you can:
 - explain the problem it solves;
-- derive or describe the core mechanism;
+- derive or describe the mechanism;
 - implement a simplified version;
 - use the standard Python tool;
 - choose an evaluation method;
 - identify failure modes;
-- compare it with a simpler baseline.
+- compare against a simpler baseline;
+- explain a landmark paper that shaped the technique.
 
-Running a notebook successfully is not the same thing as understanding it.
+Running a notebook successfully is evidence of execution, not evidence of understanding.

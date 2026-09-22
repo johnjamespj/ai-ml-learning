@@ -2,28 +2,56 @@
 
 A hands-on path from Python scientific computing to modern AI systems.
 
-This repository now contains **78 ordered lessons (00-77)**, checkpoints, and progressive projects spanning classical ML, deep learning, LLMs, generative AI, reinforcement learning, signal/radar ML, MLOps, and advanced ML topics.
+This repository contains **78 ordered lessons (00-77)** plus runnable labs, automated tests, reference solutions, notebooks, capstone projects, and a landmark-paper reproduction track.
 
 ## Start here
 
 1. Read [STUDY_PLAN.md](STUDY_PLAN.md).
 2. Use [CURRICULUM.md](CURRICULUM.md) as the canonical lesson index.
-3. Keep [PYTHON_TOOLBOX.md](PYTHON_TOOLBOX.md) nearby to see which Python libraries map to each concept.
-4. Begin with [lessons/00_setup/lesson.md](lessons/00_setup/lesson.md).
+3. Use [PYTHON_TOOLBOX.md](PYTHON_TOOLBOX.md) to map concepts to Python libraries.
+4. Begin [Lesson 00](lessons/00_setup/lesson.md).
+5. Track implementation work in [LAB_PROGRESS.md](LAB_PROGRESS.md).
 
-## How to use this repo
+## Learn by building
 
-For every lesson:
-1. Learn the intuition.
-2. Work through the math.
-3. Implement the core idea from scratch where useful.
-4. Use the standard Python library.
-5. Run an experiment.
-6. Complete the exercise.
-7. Explain the failure modes.
-8. Build something.
+The course has four intertwined layers:
 
-Do not rush to frameworks. The goal is to understand what the library is doing for you.
+### 1. Lessons
+Concept, intuition, math, failure modes, and library usage.
+
+### 2. Runnable labs
+Open [labs/README.md](labs/README.md).
+
+Labs contain:
+- `starter.py`
+- `solution.py`
+- `test_lab.py`
+- experiments
+- explanation prompts
+
+Example:
+```bash
+LAB_TARGET=starter pytest labs/lab01_linear_regression/test_lab.py -q
+```
+
+### 3. Notebooks
+Open [notebooks/README.md](notebooks/README.md).
+
+Notebooks are for visualization and experimentation. Reusable logic belongs in Python modules.
+
+### 4. Landmark papers
+Open [papers/README.md](papers/README.md) and [papers/PAPER_TRACK.md](papers/PAPER_TRACK.md).
+
+Each paper activity asks you to:
+- understand the pre-paper problem;
+- state the central claim;
+- reconstruct the key mechanism;
+- reproduce one trend at honest educational scale;
+- perform an ablation;
+- explain the evidence;
+- defend the paper without notes.
+
+This means you do not merely read *Attention Is All You Need*. You implement attention, test masks and shapes, alter the scaling term, train a toy Transformer, and explain what actually changed.
 
 ## Major tracks
 
@@ -45,7 +73,7 @@ Do not rush to frameworks. The goal is to understand what the library is doing f
 
 ## Capstone philosophy
 
-Every sophisticated model should answer to a simpler baseline. Every metric should match the real task. Every experiment should preserve provenance. Every deployment should include a plan for detecting when reality changes underneath the model.
+Every sophisticated model should answer to a simpler baseline. Every metric should match the actual task. Every experiment should preserve provenance. Every deployment should include a plan for detecting when reality changes underneath the model.
 
 ## Learning rule
 
